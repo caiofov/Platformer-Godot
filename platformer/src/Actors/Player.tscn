@@ -7,8 +7,9 @@
 extents = Vector2( 40.8143, 42.7297 )
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 89.3232, 345.669 )
+collision_mask = 8
 script = ExtResource( 2 )
+speed = Vector2( 800, 1000 )
 gravity = 500.0
 
 [node name="Player" type="Sprite" parent="."]
