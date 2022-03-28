@@ -2,14 +2,14 @@ extends Actor
 
 #also runs the parent's physics process
 func _physics_process(delta: float) -> void:
-	var is_jump_interrupted: = Input.is_action_just_released("jump") and velocity.y < 0.0
+	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0
 	#jump button has just been released and the character is moving up (jumping)
 	#it indentifies if the player has stopped jumping
 	
 	var direction: = get_direction()
 	
-	velocity = calculate_move_velocity(velocity, direction, speed, is_jump_interrupted)
-	velocity = move_and_slide(velocity, FLOOR_NORMAL) #2nd parameter -> floor normal: a vector that defines the floor
+	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
+	_velocity = move_and_slide(_velocity, FLOOR_NORMAL) #2nd parameter -> floor normal: a vector that defines the floor
 	
 	
 func get_direction() -> Vector2:
@@ -27,14 +27,14 @@ func calculate_move_velocity(
 		speed: Vector2,
 		is_jump_interrupted: bool
 	) -> Vector2:
-		var new_velocity: = linear_velocity
+		var out: = linear_velocity
 		
-		new_velocity.x = speed.x * direction.x
-		new_velocity.y += gravity * get_physics_process_delta_time() #returns the delta from the physics_process
+		out.x = speed.x * direction.x
+		out.y += gravity * get_physics_process_delta_time() #returns the delta from the physics_process
 		
 		if direction.y == -1.0:
-			new_velocity.y = speed.y * direction.y
+			out.y = speed.y * direction.y
 		if is_jump_interrupted:
-			new_velocity.y = 0.0 #it makes the character stop jumping in the middle of a jump when the key is released
+			out.y = 0.0 #it makes the character stop jumping in the middle of a jump when the key is released
 		
-		return new_velocity
+		return out

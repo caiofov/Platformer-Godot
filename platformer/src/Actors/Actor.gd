@@ -9,7 +9,7 @@ const FLOOR_NORMAL: = Vector2.UP #vector that defines the floor (it will be used
 export var speed: = Vector2(300.0, 1000.0)
 export var gravity: = 3000.0
 #export -> makes the gravity configurable. It will be displayed on the right view inspector
-var velocity: = Vector2.ZERO #velocity in each axis
+var _velocity: = Vector2.ZERO #velocity in each axis
 
 
 #calls it every frame in our game
@@ -17,5 +17,5 @@ var velocity: = Vector2.ZERO #velocity in each axis
 func _physics_process(delta: float) -> void:
 	#delta -> time elapsed since the last frame (the engine will give it to us)
 	pass
-	#velocity.y = max(velocity.y, speed.y) #sets the max velocity
+	#_velocity.y = max(_velocity.y, speed.y) #sets the max velocity
 
