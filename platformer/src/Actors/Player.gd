@@ -1,5 +1,14 @@
 extends Actor
 
+export var stomp_impulse: = 1000.0
+
+func _on_EnemyDetector_body_entered(body: Node) -> void:
+	queue_free() #kills the player
+	
+func _on_EnemyDetector_area_entered(area: Area2D) -> void:
+	#impulses the player after the stomp
+	_velocity = calculate_stomp_velocity(_velocity, stomp_impulse)
+	
 #also runs the parent's physics process
 func _physics_process(delta: float) -> void:
 	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0
@@ -40,3 +49,9 @@ func calculate_move_velocity(
 			out.y = 0.0 #it makes the character stop jumping in the middle of a jump when the key is released
 		
 		return out
+
+#calculates the stomp velocity based on a stomp impulse
+func calculate_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vector2:
+	var out:= linear_velocity
+	out.y = -impulse
+	return out
