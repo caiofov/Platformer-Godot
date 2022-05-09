@@ -43,6 +43,7 @@ margin_bottom = 55.0
 custom_fonts/font = SubResource( 1 )
 text = "Coins:
 0"
+percent_visible = -0.142857
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( -200, 0 )
