@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=2]
@@ -6,9 +6,19 @@
 [ext_resource path="res://assets/background.png" type="Texture" id=4]
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Objects/Portal2D.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Levels/Level02.gd" type="Script" id=7]
+[ext_resource path="res://assets/montserrat_extrabold.otf" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 8 )
 
 [node name="Level02" type="Node2D"]
 position = Vector2( 193.204, 0 )
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_vertical_guides_": [ 2951.0 ]
 }
@@ -24,6 +34,15 @@ margin_top = -7.0
 margin_right = 1913.2
 margin_bottom = 1073.0
 texture = ExtResource( 4 )
+
+[node name="Score" type="Label" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -72.0
+margin_bottom = 55.0
+custom_fonts/font = SubResource( 1 )
+text = "Coins:
+0"
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( -200, 0 )
