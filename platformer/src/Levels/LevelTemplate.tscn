@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/background.png" type="Texture" id=4]
+[ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=5]
 
 [node name="LevelTemplate" type="Node2D"]
 position = Vector2( 193.204, 0 )
@@ -46,6 +47,10 @@ limit_right = 2950
 
 [node name="Enemy2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1915.53, 306.763 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Coin" parent="." instance=ExtResource( 5 )]
+position = Vector2( 76.0656, 464.78 )
 scale = Vector2( 0.8, 0.8 )
 
 [editable path="Player"]
