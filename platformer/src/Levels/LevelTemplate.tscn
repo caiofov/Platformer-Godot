@@ -38,7 +38,7 @@ position = Vector2( 918.055, 540.382 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 211.942, 124.223 )
+position = Vector2( -28.2778, 124.223 )
 scale = Vector2( 0.8, 0.8 )
 gravity = 4000.0
 
@@ -50,7 +50,31 @@ position = Vector2( 1915.53, 306.763 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="Coin" parent="." instance=ExtResource( 5 )]
-position = Vector2( 76.0656, 464.78 )
+position = Vector2( 102.866, 464.78 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Coin2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 202.904, 419.881 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Coin3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 308.415, 419.881 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Coin4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1122.42, 419.881 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Coin5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1875.53, 419.881 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Coin6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1727.22, 491.979 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Coin7" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2016.42, 343.979 )
 scale = Vector2( 0.8, 0.8 )
 
 [editable path="Player"]
